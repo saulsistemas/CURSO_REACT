@@ -13,3 +13,25 @@ if(true){
 }
 console.log(nombre);
 console.log(nombre2);
+
+console.clear();
+console.log('=============Objetos Literales=======================');
+
+const persona = {
+    nombre:'Carlos',
+    apellido:'Ramirez',
+    edad: 20,
+    direccion: {
+        direc:1,
+        direc:2
+    }
+}
+
+console.log(persona);
+//clon del objeto
+const persona2 = {
+    ...persona
+};
+persona2.nombre = 'Cesar';
+console.log(persona2);
+
