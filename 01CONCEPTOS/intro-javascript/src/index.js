@@ -1,5 +1,9 @@
 //Variables
 
+import { heroes } from "./data/heroes";
+
+//import  heroes  from "./data/heroes"; ---cuando la exportacion es por defaul, podemos darle el nombre que queremos
+
 const nombre = 'Carlos';
 const apellido = 'Rojas'
 let nombre2 = 'Miguel';
@@ -100,3 +104,25 @@ const fun1 = function(valor){
 const [ar1,ar2] =  fun1('xs')
 console.log(ar1);
 ar2();
+
+
+console.clear();
+console.log('=============import=======================');
+//import {heroes} from './data/heroes.js';
+//import {heroes} from './data/heroes'
+
+const getHeroe = (id)=>{
+    return heroes.find(function(heroe){
+        if (heroe.id ===id) {
+            return heroe;
+        }else{
+            return false;
+        }
+    })
+}
+const getHeroe2 = (id)=>heroes.find((heroe)=>heroe.id === id);
+console.log(getHeroe(1));
+console.log(getHeroe2(1));
+//listado de heores con la palabra 
+const getHeroe3 = (owner)=>heroes.filter((heroe)=>heroe.owner === owner);
+console.log(getHeroe3('Marvel'));
