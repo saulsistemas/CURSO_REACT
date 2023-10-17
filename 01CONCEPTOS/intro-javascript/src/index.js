@@ -57,3 +57,23 @@ const arreglos4 = arreglos3.map((numero)=>{
     return numero*2
 });
 console.log(arreglos4);
+console.clear();
+console.log('=============Desestruturacion=======================');
+
+const heroe = {
+    nombreheroe: 'tonny',
+    edad:45,
+    clave:'Iroman'
+}
+
+const {nombreheroe} = heroe;
+
+console.log(nombreheroe);
+
+const retornaPersona  =({nombreheroe, rango='capitan'})=>{
+    return {nombreheroe,rango};
+}
+
+const {rango} = retornaPersona(heroe);
+console.log(rango);
+console.log(nombreheroe);
