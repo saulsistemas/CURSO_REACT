@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types'
-export function App({ title = "Hulk",subtitle="Naruto",name }){
+export function App({ title = "Hulk",subtitle="Naruto",name='ffff' }){
     console.log(name);
     return (
         <>
