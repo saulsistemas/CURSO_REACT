@@ -10,6 +10,6 @@ import { CounterApp } from './CounterApp'
 ReactDom.createRoot(document.getElementById('root')).render(
     <React.StrictMode>
         <App title="Iroman" subtitle = {123}/>
-        <CounterApp value ={12345}/>
+        <CounterApp value ={10}/>
     </React.StrictMode>
 )
