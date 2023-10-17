@@ -77,3 +77,26 @@ const retornaPersona  =({nombreheroe, rango='capitan'})=>{
 const {rango} = retornaPersona(heroe);
 console.log(rango);
 console.log(nombreheroe);
+
+
+console.clear();
+console.log('=============Desestruturacion de arreglos=======================');
+
+const heroeArreglo = ['Goku','Vegeta','Trunks']
+const [p1,,p3] =heroeArreglo;
+console.log(p1,p3);
+
+
+const retornaArreglo = ()=>{
+    return['ABC',123]
+}
+const [letras,numeros]=retornaArreglo();
+console.log(letras,numeros);
+
+const fun1 = function(valor){
+    return[valor,()=>{console.log('Hola mundo')}]
+}
+
+const [ar1,ar2] =  fun1('xs')
+console.log(ar1);
+ar2();
