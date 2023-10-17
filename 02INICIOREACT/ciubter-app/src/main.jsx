@@ -2,6 +2,7 @@
 import React from 'react'
 import ReactDom from 'react-dom/client'
 import {App} from './HelloWorldApp'
+import './style.css'
 //2componente
 
 //3renderizacion
