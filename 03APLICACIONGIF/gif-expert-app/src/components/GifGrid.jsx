@@ -9,7 +9,12 @@ export const GifGrid = ( {category} )=>{
     return (
         <>
             <h1>{ category }</h1>
-            
+            {
+                isLoading
+                ? <h2>...cargando</h2>
+                :null
+            }
+
             <div className="card-grid">
                 
                     {images.map((image)=>{
