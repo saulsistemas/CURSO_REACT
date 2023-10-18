@@ -6,6 +6,9 @@ export const GifExpertApp =()=>{
     //console.log(categories);
 
     const onAddCategories = (newCategory) => {
+        if (categories.includes(newCategory)) {
+            return;
+        }
         //creando una copia de categorias ...categories
         setCategories([newCategory,...categories])
         //setCategories(cate => [...cate,'valorant'])
@@ -19,6 +22,7 @@ export const GifExpertApp =()=>{
         <AddCategory 
             //setCategories={setCategories}
             onNewCategory = { (value) => onAddCategories(value) }
+            currentCtegories = {categories}
         />
         {/*Listado Gif*/}
         <ol>
