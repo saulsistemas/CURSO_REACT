@@ -18,10 +18,18 @@ export const SimpleForm = () => {
       })
     }
 
-
+    //EL [] indica que se dispare una sola vez
     useEffect(()=>{
       console.log('use efect');
-    });
+    },[]);
+
+    useEffect(()=>{
+      console.log('Formstate Changed');
+    },[formState]);
+
+    useEffect(()=>{
+      console.log('email changed!!');
+    },[email])
   return (
     <>
         <h1>Formulario Simple</h1>
