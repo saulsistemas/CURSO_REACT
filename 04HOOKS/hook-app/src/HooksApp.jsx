@@ -3,12 +3,14 @@ import { CounterWithCustomHook } from "./01-useState/CounterWithCustomHook"
 import { SimpleForm } from "./02-useEffect/SimpleForm"
 import { MiPrimerEstado } from "./REACT-VICTOR-ROBLES/01-useState/MiPrimerEstado"
 import { MiPrimerEfecto } from "./REACT-VICTOR-ROBLES/02-useEfect/MiPrimerEfecto"
+import { MiPrimerAjax } from "./REACT-VICTOR-ROBLES/03-Ajax/MiPrimerAjax"
 
 export const HooksApp = () =>{
     return(
         <>
-        <MiPrimerEfecto/>
-        {/*<MiPrimerEstado/>
+        <MiPrimerAjax/>
+        {/*<MiPrimerEfecto/>
+        <MiPrimerEstado/>
          <h1>Hooks App</h1>
         <SimpleForm/>
         <hr />
