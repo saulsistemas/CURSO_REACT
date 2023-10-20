@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+import { AvisoEfecto } from "./AvisoEfecto"
 
 export const MiPrimerEfecto = () => {
     const[usuario,setUsuario]=useState("Carlitos")
@@ -40,7 +41,7 @@ export const MiPrimerEfecto = () => {
             onClick={modFecha}
             className="btn btn-primary"
             >Cambiar fecha</button>
-        
+        {usuario=='HELPNET' && <AvisoEfecto usuario={usuario}/>}
 
         </div>
     )
