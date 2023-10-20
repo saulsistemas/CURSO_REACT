@@ -29,16 +29,26 @@ export const MiPrimerAjax =()=>{
             },
         ])
     }
-    
+    const getUsuariosAjax = ()=>{
+        fetch('https://reqres.in/api/users?page=1')
+            .then(response => response.json())
+            .then(resultado_final => {
+                setUsuarios(resultado_final.data)
+                console.log(resultado_final.data)
+            },
+            error => console.log(error)
+            )
+    }
     useEffect(() => {
-      getUSuarios();
+        getUsuariosAjax();
     }, [])
-    //console.log(usuarios);
+    //console.log(getUsuariosAjax());
     return(
         <div className="container">
             <h3>Mi primer Ajax: Hooks Ajax </h3>
             <ol>
                 {
+
                     usuarios.map(({id,first_name,last_name ,email})=>{
                         return <li key={id}>{first_name}</li>
                     })
