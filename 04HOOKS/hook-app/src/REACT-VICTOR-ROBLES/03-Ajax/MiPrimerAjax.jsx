@@ -4,6 +4,7 @@ import { useEffect, useState } from "react"
 export const MiPrimerAjax =()=>{
 
     const [usuarios,setUsuarios] = useState([])
+    const [cargando,setCargando] = useState(true)
     const getUSuarios = ()=>{
         setUsuarios([
             {
@@ -45,31 +46,40 @@ export const MiPrimerAjax =()=>{
         const respuesta = await fetch(url);
         const {data} = await respuesta.json();
         setUsuarios(data)
+        setCargando(false)
         console.log(data);
     }
 
     useEffect(() => {
         getUsuarioAjaxAwait();
     }, [])
-    //console.log(getUsuarioAjaxAwait());
-    return(
-        <div className="container">
-            <h3>Mi primer Ajax: Hooks Ajax </h3>
-            <div className="row">
-                {
-                    usuarios.map(({id,first_name,last_name ,email,avatar})=>{
-                       return   <div className="col-sm-4" key={id}>
-                                <div className="card" >
-                                    <img src={avatar} className="card-img-top" alt="..."></img>
-                                    <div className="card-body">
-                                        <h5 className="card-title">{first_name}</h5>
-                                        <p className="card-text"> {last_name} | {email} </p>
-                                    </div>
-                                </div>
-                                </div>
-                    })
-                }
+
+    if (cargando) {
+        return(
+            <div>
+                cargando datos
             </div>
-        </div>
-    )
+        )
+    }else{
+        return(
+            <div className="container">
+                <h3>Mi primer Ajax: Hooks Ajax </h3>
+                <div className="row">
+                    {
+                        usuarios.map(({id,first_name,last_name ,email,avatar})=>{
+                        return   <div className="col-sm-4" key={id}>
+                                    <div className="card" >
+                                        <img src={avatar} className="card-img-top" alt="..."></img>
+                                        <div className="card-body">
+                                            <h5 className="card-title">{first_name}</h5>
+                                            <p className="card-text"> {last_name} | {email} </p>
+                                        </div>
+                                    </div>
+                                    </div>
+                        })
+                    }
+                </div>
+            </div>
+        )
+    }
 }
