@@ -9,13 +9,29 @@ export const MiPrimerFormulario = () => {
         e.preventDefault()
         let datos = e.target;
         const usuario = {
-            nombre:datos.txtnombre.value,
-            apellido:datos.txtapellido.value,
-            genero:datos.txtgenero.value,
-            biografia:datos.txtbiografia.value,
+            nombre:datos.nombre.value,
+            apellido:datos.apellido.value,
+            genero:datos.genero.value,
+            biografia:datos.biografia.value,
         }
         setUsuario(usuario)
-        console.log(usuario);
+        //console.log(usuario);
+    }
+
+    const cambiarDatos = (e)=>{
+        //sacar el valor de los input
+        let nombre_del_input = e.target.name
+        //copia
+        let usuario_a_modificar = usuario;
+
+        setUsuario(estado_previo =>{
+            return{
+                //mantenmos todas las propuesdades
+                ...estado_previo,
+                [nombre_del_input]: e.target.value
+            }
+        })
+        //console.log(usuario_a_modificar);
     }
     const {nombre,apellido,genero,biografia} = usuario;
   return (
@@ -24,23 +40,29 @@ export const MiPrimerFormulario = () => {
         <h3>Mi primer Formulario: </h3>
         <form onSubmit={conseguirDatosFormularios}>
             <input 
-            name="txtnombre" 
+            name="nombre" 
+            onChange={cambiarDatos}
             className="form-control" type="text" />
             <input 
-            name="txtapellido" 
+            onChange={cambiarDatos}
+            name="apellido" 
             className="form-control" type="text" />
             <select 
-            name="txtgenero"
+            onChange={cambiarDatos}
+            name="genero"
             className="form-control"  id="">
                 <option value="hombre">Hombre</option>
                 <option value="mujer"> Mujer</option>
             </select>
-            <textarea className="form-control" name="txtbiografia" id="" cols="30" rows="10"></textarea>
+            <textarea 
+            onChange={cambiarDatos}
+            className="form-control" name="biografia" id="" cols="30" rows="10"></textarea>
             <input className="btn btn-primary" type="submit" value="Evniar" />
         </form>
 
         <div>
             <table className="table " border={1}>
+                <tbody>
                 <tr>
                     <td>Su nombre es: {nombre}</td>
                     <td>Su apellido es: {apellido}</td>
@@ -54,6 +76,7 @@ export const MiPrimerFormulario = () => {
                     
                     }
                 </tr>
+                </tbody>
             </table>
         </div>
     </div>
