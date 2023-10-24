@@ -1,9 +1,12 @@
+import { useState } from "react";
 import { Agregar } from "./componentes/Agregar"
 import { Buscador } from "./componentes/Buscador"
 import { Listado } from "./componentes/Listado"
 
 
 export const AppPelicula = function () {
+
+    const [listado, setListado] = useState([]);
 
     return (
         <div className="container">
@@ -31,14 +34,17 @@ export const AppPelicula = function () {
 
             <div className="row">
                 <div className="col-md-12">
-                    <Agregar/>
+                    <Agregar setListado ={setListado}/>
                 </div>
             </div>
 
             <hr />
 
             <div className="row">
-                <Listado/>
+                <Listado 
+                listado = {listado}
+                setListado = {setListado}
+                />
             </div>
 
         </div>

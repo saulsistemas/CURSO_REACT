@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 
-export const Listado = function () {
+export const Listado = function ({listado, setListado}) {
 
-    const [listado, setListado] = useState([]);
+    //const [listado, setListado] = useState([]);
     //02) utilizar hooks para cargar nuestra funcion 1 sola vez []
     useEffect(function () {
         conseguirPeliculas()
