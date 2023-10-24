@@ -1,3 +1,6 @@
+import { Agregar } from "./componentes/Agregar"
+import { Buscador } from "./componentes/Buscador"
+import { Listado } from "./componentes/Listado"
 
 
 export const AppPelicula = function () {
@@ -20,10 +23,7 @@ export const AppPelicula = function () {
                                 <a className="nav-link" href="#">Peliculas</a>
                             </li>
                         </ul>
-                        <form className="d-flex">
-                            <input type="text" className="form-control me-2" />
-                            <button className="btn btn-success" type="submit">Search</button>
-                        </form>
+                        <Buscador/>
                     </div>
                 </div>
             </nav>
@@ -31,77 +31,14 @@ export const AppPelicula = function () {
 
             <div className="row">
                 <div className="col-md-12">
-                    <form action="">
-                        <input type="text" className="form-control" name="titulo" /><br />
-                        <textarea name="titulo"   className="form-control"></textarea><br />
-                        <input className="btn btn-primary" type="submit" value="Enviar" />
-                    </form>
+                    <Agregar/>
                 </div>
             </div>
 
             <hr />
 
             <div className="row">
-                <div className="col-md-3">
-                    <div className="card">
-                        <div className="card-header">
-                            Featured
-                        </div>
-                        <div className="card-body">
-                            <h5 className="card-title">Special title treatment</h5>
-                            <p className="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                        </div>
-                        <div className="card-footer">
-                            <a href="#" className="btn btn-primary me-md-2">Editar</a>
-                            <a href="#" className="btn btn-danger">Eliminar</a>
-                        </div>
-                    </div>
-                </div>
-                <div className="col-md-3">
-                    <div className="card">
-                        <div className="card-header">
-                            Featured
-                        </div>
-                        <div className="card-body">
-                            <h5 className="card-title">Special title treatment</h5>
-                            <p className="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                        </div>
-                        <div className="card-footer">
-                            <a href="#" className="btn btn-primary me-md-2">Editar</a>
-                            <a href="#" className="btn btn-danger">Eliminar</a>
-                        </div>
-                    </div>
-                </div>
-                <div className="col-md-3">
-                    <div className="card">
-                        <div className="card-header">
-                            Featured
-                        </div>
-                        <div className="card-body">
-                            <h5 className="card-title">Special title treatment</h5>
-                            <p className="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                        </div>
-                        <div className="card-footer">
-                            <a href="#" className="btn btn-primary me-md-2">Editar</a>
-                            <a href="#" className="btn btn-danger">Eliminar</a>
-                        </div>
-                    </div>
-                </div>
-                <div className="col-md-3">
-                    <div className="card">
-                        <div className="card-header">
-                            Featured
-                        </div>
-                        <div className="card-body">
-                            <h5 className="card-title">Special title treatment</h5>
-                            <p className="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                        </div>
-                        <div className="card-footer">
-                            <a href="#" className="btn btn-primary me-md-2">Editar</a>
-                            <a href="#" className="btn btn-danger">Eliminar</a>
-                        </div>
-                    </div>
-                </div>
+                <Listado/>
             </div>
 
         </div>
