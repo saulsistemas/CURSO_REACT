@@ -17,13 +17,19 @@ export const RouterPrincipal = () => {
                         <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
                             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                                 <li className="nav-item">
-                                    <NavLink className="nav-link active" aria-current="page" to='/inicio' >Inicio</NavLink>
+                                    <NavLink 
+                                    className={({isActive})=>isActive?"nav-link active":"nav-link"} 
+                                    to='/inicio' aria-current="page">Inicio</NavLink>
                                 </li>
                                 <li className="nav-item">
-                                    <NavLink className="nav-link" to='/articulo'>Artículos</NavLink>
+                                    <NavLink 
+                                    className={({isActive})=>isActive?"nav-link active":"nav-link"}
+                                    to='/articulo'>Artículos</NavLink>
                                 </li>
                                 <li className="nav-item">
-                                    <NavLink className="nav-link" to='/contacto'>Contacto</NavLink>
+                                    <NavLink 
+                                    className={({isActive})=>isActive?"nav-link active":"nav-link"}
+                                    to='/contacto'>Contacto</NavLink>
                                 </li>
                             </ul>
                         </div>
