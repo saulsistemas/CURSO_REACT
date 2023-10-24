@@ -5,12 +5,14 @@ import { MiPrimerEstado } from "./REACT-VICTOR-ROBLES/01-useState/MiPrimerEstado
 import { MiPrimerEfecto } from "./REACT-VICTOR-ROBLES/02-useEfect/MiPrimerEfecto"
 import { MiPrimerAjax } from "./REACT-VICTOR-ROBLES/03-Ajax/MiPrimerAjax"
 import { MiPrimerFormulario } from "./REACT-VICTOR-ROBLES/04-formularios/MiPrimerFormulario"
+import { AppPelicula } from "./REACT-VICTOR-ROBLES/05-projecto-peliculas/AppPelicula"
 
 export const HooksApp = () =>{
     return(
         <>
-        <MiPrimerFormulario/>
-        {/*<MiPrimerAjax/>
+        <AppPelicula/>
+        {/*<MiPrimerFormulario/>
+        <MiPrimerAjax/>
         <MiPrimerEfecto/>
         <MiPrimerEstado/>
          <h1>Hooks App</h1>
