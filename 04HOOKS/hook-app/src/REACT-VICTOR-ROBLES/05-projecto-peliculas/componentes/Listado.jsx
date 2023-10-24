@@ -17,7 +17,7 @@ export const Listado = function () {
 
     return (
         <>
-            { listado && listado.map(function (pelicula) {
+            { listado ? listado.map(function (pelicula) {
                 return  <div className="col-md-3" key={pelicula.id}>
                             <div className="card">
                                 <div className="card-header">
@@ -32,7 +32,7 @@ export const Listado = function () {
                                 </div>
                             </div>
                         </div>
-            })}
+            }): <h2>No hay pelicula</h2>}
         </>
     )
 }
