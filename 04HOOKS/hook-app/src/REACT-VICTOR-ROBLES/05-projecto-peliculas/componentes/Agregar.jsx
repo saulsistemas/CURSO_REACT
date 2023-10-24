@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { GuardarEnLocalStorage } from "../helpers/GuardarEnStorage";
 
 export const Agregar = () => {
     const tituloComponente = "Añadir Pelicula";
@@ -24,28 +25,12 @@ export const Agregar = () => {
         }
         setPeliculas(pelicula);
         //Guardar en el localStorage
-        guardarEnLocalStorage(pelicula);
+        GuardarEnLocalStorage('pelis',pelicula);
 
         
     }
     
-    const guardarEnLocalStorage= function (pelicula){
-        //Conseguir los elementos que ya tenemos en el localStorage
-
-        let elementos = JSON.parse(localStorage.getItem("pelis"))
-
-        //comprobar si es un array
-        if (Array.isArray(elementos)) {
-            //agregar objeto nuevo
-            elementos.push(pelicula);
-        }else{
-            elementos = [pelicula]
-        }
-        //Guardar en el local storage
-        localStorage.setItem('pelis',JSON.stringify(elementos))
-        console.log(elementos);
-        return pelicula;
-    }
+    
     
     return (
         <>
