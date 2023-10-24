@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
 export const Listado = function ({listado, setListado}) {
 
@@ -12,9 +12,22 @@ export const Listado = function ({listado, setListado}) {
     const conseguirPeliculas = function () {
         const peliculas = JSON.parse(localStorage.getItem('pelis'))
         setListado(peliculas)
+        return peliculas;
         //console.log(peliculas);
     }
 
+    const borrarPelicula=function (id){
+        //Obtener el listado de peliculas
+        const peliculasAlmacenadas = conseguirPeliculas();
+        //filtrar las peliculas y devolver todas las que no coinciden con el ID
+        const nuevoArrayPeliculas = peliculasAlmacenadas.filter(function(pelicula){
+            return pelicula.id !== parseInt(id)
+        })
+        //actualizar listado con nuevo array
+        setListado(nuevoArrayPeliculas)
+        //eliminar de localstorage
+        localStorage.setItem('pelis', JSON.stringify(nuevoArrayPeliculas))
+    }
     return (
         <>
             { listado ? listado.map(function (pelicula) {
@@ -27,8 +40,12 @@ export const Listado = function ({listado, setListado}) {
                                     <p className="card-text">{ pelicula.descripcion }</p>
                                 </div>
                                 <div className="card-footer">
-                                    <a href="#" className="btn btn-primary me-md-2">Editar</a>
-                                    <a href="#" className="btn btn-danger">Eliminar</a>
+                                    <button  
+                                   
+                                    className="btn btn-primary me-md-2">Editar</button>
+                                    <button  
+                                     onClick={function(){ borrarPelicula(pelicula.id) }}
+                                    className="btn btn-danger">Eliminar</button>
                                 </div>
                             </div>
                         </div>
