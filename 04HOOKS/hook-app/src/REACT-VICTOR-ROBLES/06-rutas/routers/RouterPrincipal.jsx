@@ -3,6 +3,7 @@ import { Inicio } from '../componentes/inicio'
 import { Contacto } from '../componentes/Contacto'
 import { Articulo } from '../componentes/Articulo'
 import { Error } from '../componentes/Error'
+import { Persona } from '../componentes/Persona'
 
 export const RouterPrincipal = () => {
     return (
@@ -42,6 +43,7 @@ export const RouterPrincipal = () => {
                     <Route path='/inicio' element={<Inicio />} />
                     <Route path='/articulo' element={<Articulo />} />
                     <Route path='/contacto' element={<Contacto />} />
+                    <Route path='/persona/:nombre/:apellido' element={<Persona />} />
                     <Route path='*' element={<Error/>} />
 
                 </Routes>
