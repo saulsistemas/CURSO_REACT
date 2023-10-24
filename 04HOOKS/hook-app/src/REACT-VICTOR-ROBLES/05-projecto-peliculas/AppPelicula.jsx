@@ -26,7 +26,10 @@ export const AppPelicula = function () {
                                 <a className="nav-link" href="#">Peliculas</a>
                             </li>
                         </ul>
-                        <Buscador/>
+                        <Buscador
+                        listado = {listado}
+                        setListado = {setListado}
+                        />
                     </div>
                 </div>
             </nav>
