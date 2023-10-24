@@ -1,8 +1,9 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import { Editar } from "./Editas";
 
 export const Listado = function ({listado, setListado}) {
 
-    //const [listado, setListado] = useState([]);
+    const [editar, setEditar] = useState();
     //02) utilizar hooks para cargar nuestra funcion 1 sola vez []
     useEffect(function () {
         conseguirPeliculas()
@@ -31,7 +32,7 @@ export const Listado = function ({listado, setListado}) {
     return (
         <>
             { listado ? listado.map(function (pelicula) {
-                return  <div className="col-md-3" key={pelicula.id}>
+                return  <div className="col-md-4" key={pelicula.id}>
                             <div className="card">
                                 <div className="card-header">
                                 { pelicula.titulo }
@@ -41,15 +42,19 @@ export const Listado = function ({listado, setListado}) {
                                 </div>
                                 <div className="card-footer">
                                     <button  
-                                   
+                                     onClick={function(){ setEditar(pelicula.id) }}
                                     className="btn btn-primary me-md-2">Editar</button>
                                     <button  
                                      onClick={function(){ borrarPelicula(pelicula.id) }}
                                     className="btn btn-danger">Eliminar</button>
+                                    { editar === pelicula.id ? 
+                                        <Editar/>
+                                    :'' }
                                 </div>
                             </div>
                         </div>
             }): <h2>No hay pelicula</h2>}
+            
         </>
     )
 }
