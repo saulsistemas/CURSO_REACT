@@ -48,7 +48,13 @@ export const Listado = function ({listado, setListado}) {
                                      onClick={function(){ borrarPelicula(pelicula.id) }}
                                     className="btn btn-danger">Eliminar</button>
                                     { editar === pelicula.id ? 
-                                        <Editar/>
+                                        <Editar 
+                                        pelicula={pelicula} 
+                                        conseguirPeliculas={conseguirPeliculas}
+                                        setEditar={setEditar}
+                                        setListado={setListado}
+                                        
+                                        />
                                     :'' }
                                 </div>
                             </div>
