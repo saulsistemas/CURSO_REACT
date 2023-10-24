@@ -12,6 +12,6 @@ export const GuardarEnLocalStorage= function (clave,pelicula){
     }
     //Guardar en el local storage
     localStorage.setItem(clave,JSON.stringify(elementos))
-    console.log(elementos);
+    //console.log(elementos);
     return pelicula;
 }
