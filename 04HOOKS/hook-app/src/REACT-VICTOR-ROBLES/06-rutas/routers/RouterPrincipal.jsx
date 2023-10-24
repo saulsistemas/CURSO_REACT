@@ -2,6 +2,7 @@ import { Routes, Route, NavLink, BrowserRouter } from 'react-router-dom'
 import { Inicio } from '../componentes/inicio'
 import { Contacto } from '../componentes/Contacto'
 import { Articulo } from '../componentes/Articulo'
+import { Error } from '../componentes/Error'
 
 export const RouterPrincipal = () => {
     return (
@@ -41,7 +42,7 @@ export const RouterPrincipal = () => {
                     <Route path='/inicio' element={<Inicio />} />
                     <Route path='/articulo' element={<Articulo />} />
                     <Route path='/contacto' element={<Contacto />} />
-                    <Route path='*' element={<h1> Error | 404 </h1>} />
+                    <Route path='*' element={<Error/>} />
 
                 </Routes>
             </div>
