@@ -1,9 +1,14 @@
 import { Routes, Route, NavLink, BrowserRouter, Navigate } from 'react-router-dom'
-import { Inicio } from '../componentes/inicio'
+import { Inicio } from '../componentes/Inicio'
 import { Contacto } from '../componentes/Contacto'
 import { Articulo } from '../componentes/Articulo'
 import { Error } from '../componentes/Error'
 import { Persona } from '../componentes/Persona'
+import { PanelControl } from '../componentes/PanelControl'
+import { InicioPanel} from '../componentes/Panel/InicioPanel'
+import { Crear} from '../componentes/Panel/Crear'
+import { Gestion} from '../componentes/Panel/Gestion'
+import { AcercaDe} from '../componentes/Panel/AcercaDe'
 
 export const RouterPrincipal = () => {
     return (
@@ -33,6 +38,11 @@ export const RouterPrincipal = () => {
                                     className={({isActive})=>isActive?"nav-link active":"nav-link"}
                                     to='/contacto'>Contacto</NavLink>
                                 </li>
+                                <li className="nav-item">
+                                    <NavLink 
+                                    className={({isActive})=>isActive?"nav-link active":"nav-link"}
+                                    to='/panel'>Panel</NavLink>
+                                </li>
                             </ul>
                         </div>
                     </div>
@@ -48,6 +58,12 @@ export const RouterPrincipal = () => {
                     <Route path='/persona/:nombre/:apellido' element={<Persona />} />
                     <Route path='*' element={<Error/>} />
                     <Route path={'/redirigir'} element={<Navigate to="/persona/carlos/rojas"/>} />
+                    <Route path='/panel/*' element={<PanelControl />} >
+                        <Route path='inicio' element={<InicioPanel/>} />
+                        <Route path='crear' element={<Crear/>} />
+                        <Route path='gestion' element={<Gestion/>} />
+                        <Route path='acercade' element={<AcercaDe/>} />
+                    </Route>
 
                 </Routes>
             </div>
