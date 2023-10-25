@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 import { dataproyectos } from "../data/dataproyectos"
 
 export const Portafolio = () => {
@@ -13,7 +14,7 @@ export const Portafolio = () => {
               {dataproyectos.map(function (proyecto) {
                 return (
                   <div className="card border-primary mb-3 shadow rounded-1 " key={proyecto.id} >
-                    <img src={'/images/'+proyecto.id+'.jpg'} className="card-img-top" ></img>
+                    <Link to={"/proyecto/"+proyecto.id}><img src={'/images/'+proyecto.id+'.jpg'} className="card-img-top" ></img></Link>
                     <div className="card-body ">
                       <h5 className="card-title">{ proyecto.nombre }</h5>
                       <p className="card-text">
