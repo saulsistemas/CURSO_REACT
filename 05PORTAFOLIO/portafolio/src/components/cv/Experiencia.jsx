@@ -5,7 +5,7 @@ export const Experiencia = () => {
             <section>
                 <div className="d-flex align-items-center justify-content-between mb-4">
                     <h4 className="text-primary fw-bolder mb-0">Experiencia</h4>
-                    <a className="btn btn-primary px-4 py-3" href="#!">
+                    <a className="btn btn-primary px-4 py-3" href="https://www.linkedin.com/in/saulsistemas/" target="_blank">
                         <div className="d-inline-block bi bi-download me-2"></div>
                         Descarga CV
                     </a>

@@ -2,6 +2,14 @@
 export const Inicio = () => {
   return (
     <div>
+      <section className="d-flex justify-content-center mt-5 mt-xxl-0">
+        <div className="row">
+          <div className="col-md-12">
+            <img src={"/images/saul-santamaria.gif"} alt="" />
+          </div>
+        </div>
+      </section>
+      <hr />
       <section className="bg-light py-5">
         <div className="container px-5">
           <div className="row gx-5 justify-content-center">

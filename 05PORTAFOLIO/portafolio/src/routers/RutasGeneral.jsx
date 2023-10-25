@@ -14,12 +14,12 @@ export const RutasGeneral = () => {
             <Header/>
             {/* CONTENIDO CENTRAL */}
                 <Routes>
-                    <Route path='/' element={ <Navigate to='/Inicio'/> } />
-                    <Route path='/inicio' element={ <Inicio/> } />
-                    <Route path='/portafolio' element={ <Portafolio/> } />
-                    <Route path='/curriculum' element={ <Curriculum/> } />
-                    <Route path='/contacto' element={ <Contacto/> } />
-                    <Route path='/proyecto' element={ <Contacto/> } />
+                    <Route path='/PORTAFOLIO/' element={ <Navigate to='/Inicio'/> } />
+                    <Route path='/PORTAFOLIO/inicio' element={ <Inicio/> } />
+                    <Route path='/PORTAFOLIO/portafolio' element={ <Portafolio/> } />
+                    <Route path='/PORTAFOLIO/curriculum' element={ <Curriculum/> } />
+                    <Route path='/PORTAFOLIO/contacto' element={ <Contacto/> } />
+                    <Route path='/PORTAFOLIO/proyecto' element={ <Contacto/> } />
                     <Route path='*' element={ <h1>Página no existe Error | 404 </h1> } />
                 </Routes>
             {/* FOOTER */}

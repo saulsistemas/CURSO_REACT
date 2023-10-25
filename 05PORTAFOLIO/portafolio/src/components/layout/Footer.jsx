@@ -10,7 +10,7 @@ export const Footer = () => {
                     <li className="nav-item"><NavLink to="/curriculum" className="nav-link px-2 text-body-secondary">Curriculum</NavLink></li>
                     <li className="nav-item"><NavLink to="/contacto" className="nav-link px-2 text-body-secondary">Contacto</NavLink></li>
                 </ul>
-                <p className="text-center text-body-secondary">© 2023 Saul Santamaria Ramos </p>
+                <p className="text-center text-body-secondary"> <a href="https://www.linkedin.com/in/saulsistemas/" target="blank">© 2023 Saul Santamaria Ramos </a>  </p>
             </footer>
         </>
     )
