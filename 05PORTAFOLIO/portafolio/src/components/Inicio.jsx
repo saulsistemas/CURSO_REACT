@@ -6,7 +6,7 @@ export const Inicio = () => {
       <section className="d-flex justify-content-center mt-5 mt-xxl-0">
         <div className="row">
           <div className="col-md-12">
-            <img src={"/images/saul-santamaria.gif"} alt="" />
+            <img src={"images/saul-santamaria.gif"} alt="" />
           </div>
         </div>
       </section>
