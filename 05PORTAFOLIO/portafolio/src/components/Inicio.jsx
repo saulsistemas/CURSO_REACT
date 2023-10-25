@@ -1,3 +1,4 @@
+import { ListadoProyectos } from "./ListadoProyectos"
 
 export const Inicio = () => {
   return (
@@ -32,7 +33,14 @@ export const Inicio = () => {
           </div>
         </div>
       </section>
+      <section className=" py-5">
+        <div className="container px-5">
+          <div className="row gx-5 justify-content-center">
+            <ListadoProyectos limite={2}/>
 
+          </div>
+        </div>
+      </section>
     </div>
   )
 }
