@@ -1,8 +1,7 @@
 import React from 'react'
-import { Routes, Route, BrowserRouter, NavLink } from 'react-router-dom'
+import { Routes, Route, BrowserRouter, NavLink, Navigate } from 'react-router-dom'
 import { Inicio } from '../components/Inicio'
 import { Portafolio } from '../components/Portafolio'
-import { Servicio } from '../components/Servicio'
 import { Curriculum } from '../components/Curriculum'
 import { Contacto } from '../components/Contacto'
 import { Header } from '../components/layout/Header'
@@ -15,12 +14,13 @@ export const RutasGeneral = () => {
             <Header/>
             {/* CONTENIDO CENTRAL */}
                 <Routes>
-                    <Route path='/' element={ <Inicio/> } />
+                    <Route path='/' element={ <Navigate to='/Inicio'/> } />
                     <Route path='/inicio' element={ <Inicio/> } />
                     <Route path='/portafolio' element={ <Portafolio/> } />
-                    <Route path='/servicio' element={ <Servicio/> } />
                     <Route path='/curriculum' element={ <Curriculum/> } />
                     <Route path='/contacto' element={ <Contacto/> } />
+                    <Route path='/proyecto' element={ <Contacto/> } />
+                    <Route path='*' element={ <h1>Página no existe Error | 404 </h1> } />
                 </Routes>
             {/* FOOTER */}
             <Footer/>
